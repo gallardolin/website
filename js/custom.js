@@ -95,11 +95,22 @@ $(document).ready(function () {
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         var map = new google.maps.Map(mapCanvas, mapOptions);
+
+        var contentString = 'test info';
+        
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
         var marker = new google.maps.Marker({
             position: coordinates,
             map: map,
             label: 'labels',
             title: 'Hello World!',
+        });
+
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
         });
     }
 
