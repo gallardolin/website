@@ -85,18 +85,23 @@ $(document).ready(function () {
         }
     });
     /***************** Google Map ******************/
-
+    google.maps.event.addDomListener(window, 'load', initialize);
     function initialize() {
+        var coordinates = {lat: 25.127026, lng: 121.463461};
         var mapCanvas = document.getElementById('map');
         var mapOptions = {
-            center: new google.maps.LatLng(25.127026, 121.463461),
-            zoom: 18,
+            center: coordinates,
+            zoom: 15,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         var map = new google.maps.Map(mapCanvas, mapOptions);
+        var marker = new google.maps.Marker({
+            position: coordinates,
+            map: map,
+            label: 'labels',
+            title: 'Hello World!',
+        });
     }
-
-    google.maps.event.addDomListener(window, 'load', initialize);
 
     /***************** Wow.js ******************/
     
