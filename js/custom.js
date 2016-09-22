@@ -125,11 +125,4 @@ $(document).ready(function () {
         preloader.remove();
     });
 
-    /* Javascript */
-    $('#twzipcode').twzipcode({
-        'zipcodeSel'  : '106', // 此參數會優先於 countySel, districtSel
-        'countySel'   : '台北市',
-        'districtSel' : '大安區'
-    });
-
 })

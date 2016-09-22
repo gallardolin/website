@@ -445,19 +445,40 @@ work only with <span>Rise</span>.<i class="fa fa-quote-right right fa-2x"></i></
                     <h2>立 即 訂 購</h2>
                     <hr class="sep">
                     <h3>Order right now</h3>
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScioIA59ZN71aZmmeMElf3u42nd82Di5K-YREifDJ3EVq2QFw/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-                    <!--     <form>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="Name" placeholder="Name">
+                        <form>
+                            <!-- <div class="form-group">
+                                <input type="text" class="form-control" id="Name" placeholder="Name "name="entry.473890833" value="" required dir="auto" data-initial-dir="auto" data-initial-value="">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="Email" placeholder="Email">
+                                <input type="text" class="form-control" id="Email" placeholder="Email" name="entry.1581381411" value="" required dir="auto" data-initial-dir="auto" data-initial-value="">
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control" rows="3" placeholder="Message"></textarea>
                             </div>
-                            <a href="#" class="btn-block">Send</a>
-                        </form> -->
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScioIA59ZN71aZmmeMElf3u42nd82Di5K-YREifDJ3EVq2QFw/formResponse?&entry.473890833=test&entry.1581381411=123456&entry.1174023174=654321&submit=Submit" class="btn-block">Send</a> -->
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="Purchaser" placeholder="Purchaser" name="Purchaser" value="" required dir="auto">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="Receiver" placeholder="Receiver" name="entry.1523642760" value="" required dir="auto">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="Email" placeholder="Email" name="entry.1132965730" value="" required dir="auto">
+                            </div>
+<!-- 
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="Phone" placeholder="Phone" name="entry.2003493896" value="" required dir="auto">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="Address" placeholder="Address" name="entry.1228450244" value="" required dir="auto">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" placeholder="Message" name="entry.1568875704" value="" required dir="auto"></textarea>
+                            </div>  -->
+                            <!-- <input type="submit" class="btn-block" value="Send"> -->
+                            <input type="submit" class="mybutton" value="訂購" onclick="postToGoogle();">
+
+                        </form>
                     </div>
                 </div>
             </div><!-- col -->
@@ -465,6 +486,31 @@ work only with <span>Rise</span>.<i class="fa fa-quote-right right fa-2x"></i></
         </div><!-- row -->
     
     </div><!-- container -->
+
+    <script type="text/javascript">
+           function postToGoogle() {
+               var field1 = document.getElementById("Purchaser").value;
+               var field2 = document.getElementById("Receiver").value;
+               var field3 = document.getElementById("Email").value;
+               console.log(field3)
+               $.ajax({
+                   url: "https://docs.google.com/forms/d/e/1FAIpQLScioIA59ZN71aZmmeMElf3u42nd82Di5K-YREifDJ3EVq2QFw/formResponse",
+                   data: {"entry.473890833": field1, "entry.1228450244": field2, "entry.1568875704": field3},
+                   type: "POST",
+                   //dataType: "xml",
+                   statusCode: {
+                       0: function() {
+                           console.log("successful")
+                           //Success message
+                       },
+                       200: function() {
+                           console.log("failed")
+                           //Success Message
+                       }
+                   }
+               });
+           }
+       </script>
 
     <!-- Google Map
 	=============================================
