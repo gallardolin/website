@@ -456,14 +456,17 @@ work only with <span>Rise</span>.<i class="fa fa-quote-right right fa-2x"></i></
                                 <textarea class="form-control" rows="3" placeholder="Message"></textarea>
                             </div>
                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScioIA59ZN71aZmmeMElf3u42nd82Di5K-YREifDJ3EVq2QFw/formResponse?&entry.473890833=test&entry.1581381411=123456&entry.1174023174=654321&submit=Submit" class="btn-block">Send</a> -->
+                            <p> 姓 名 </p>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="Purchaser" placeholder="Purchaser" name="Purchaser" value="" required dir="auto">
+                                <input type="text" class="form-control" id="Purchaser" placeholder="" name="Purchaser" value="" required dir="auto">
                             </div>
+                            <p> 地 址 </p>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="Receiver" placeholder="Receiver" name="entry.1523642760" value="" required dir="auto">
+                                <input type="text" class="form-control" id="Receiver" placeholder="" name="Receiver" value="" required dir="auto">
                             </div>
+                            <p> 聯 絡 電 話 </p>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="Email" placeholder="Email" name="entry.1132965730" value="" required dir="auto">
+                                <input type="text" class="form-control" id="Email" placeholder="" name="Email" value="" required dir="auto">
                             </div>
 <!-- 
                             <div class="form-group">
@@ -492,10 +495,12 @@ work only with <span>Rise</span>.<i class="fa fa-quote-right right fa-2x"></i></
                var field1 = document.getElementById("Purchaser").value;
                var field2 = document.getElementById("Receiver").value;
                var field3 = document.getElementById("Email").value;
+               console.log(field1)
+               console.log(field2)
                console.log(field3)
                $.ajax({
                    url: "https://docs.google.com/forms/d/e/1FAIpQLScioIA59ZN71aZmmeMElf3u42nd82Di5K-YREifDJ3EVq2QFw/formResponse",
-                   data: {"entry.473890833": field1, "entry.1228450244": field2, "entry.1568875704": field3},
+                   data: {"entry.473890833": field1, "entry.1581381411": field2, "entry.1174023174": field3},
                    type: "POST",
                    //dataType: "xml",
                    statusCode: {
