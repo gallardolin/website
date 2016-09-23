@@ -430,11 +430,11 @@ work only with <span>Rise</span>.<i class="fa fa-quote-right right fa-2x"></i></
                 <h2>聯 絡 我 們</h2>
                 <hr class="sep">
                 <h3>Contact with us</h3>
-                <p><span class="icon icon-home"></span>新北市淡水區自強路48-1號<br/>
-                    <span class="icon icon-phone"></span> +34 9884 4893 <br/>
-                    <span class="icon icon-mobile"></span> +34 59855 9853 <br/>
-                    <span class="icon icon-envelop"></span> <a href="#"> agency@blacktie.co</a> <br/>
-                    <span class="icon icon-facebook"></span> <a href="#"> BlackTie Agency </a> <br/>
+                <p><span class="fa fa-home"></span>新北市淡水區自強路48-1號<br/>
+                    <span class="fa fa-phone"></span> +34 9884 4893 <br/>
+                    <span class="fa fa-mobile"></span> +34 59855 9853 <br/>
+                    <span class="fa fa-envelope"></span> <a href="#"> agency@blacktie.co</a> <br/>
+                    <span class="fa fa-facebook"></span> <a href="#"> BlackTie Agency </a> <br/>
                 </p>
                 <div id="map" style="position: relative;"></div>
             </div><!-- col -->
@@ -445,17 +445,7 @@ work only with <span>Rise</span>.<i class="fa fa-quote-right right fa-2x"></i></
                     <h2>立 即 訂 購</h2>
                     <hr class="sep">
                     <h3>Order right now</h3>
-                        <form>
-                            <!-- <div class="form-group">
-                                <input type="text" class="form-control" id="Name" placeholder="Name "name="entry.473890833" value="" required dir="auto" data-initial-dir="auto" data-initial-value="">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="Email" placeholder="Email" name="entry.1581381411" value="" required dir="auto" data-initial-dir="auto" data-initial-value="">
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" rows="3" placeholder="Message"></textarea>
-                            </div>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScioIA59ZN71aZmmeMElf3u42nd82Di5K-YREifDJ3EVq2QFw/formResponse?&entry.473890833=test&entry.1581381411=123456&entry.1174023174=654321&submit=Submit" class="btn-block">Send</a> -->
+                        <form role="form" action="" class="submit-form">
                             <p> 姓 名 </p>
                             <div class="form-group">
                                 <input type="text" class="form-control" id="Purchaser" placeholder="" name="Purchaser" value="" required dir="auto">
@@ -468,19 +458,7 @@ work only with <span>Rise</span>.<i class="fa fa-quote-right right fa-2x"></i></
                             <div class="form-group">
                                 <input type="text" class="form-control" id="Email" placeholder="" name="Email" value="" required dir="auto">
                             </div>
-<!-- 
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="Phone" placeholder="Phone" name="entry.2003493896" value="" required dir="auto">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="Address" placeholder="Address" name="entry.1228450244" value="" required dir="auto">
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" rows="3" placeholder="Message" name="entry.1568875704" value="" required dir="auto"></textarea>
-                            </div>  -->
-                            <!-- <input type="submit" class="btn-block" value="Send"> -->
-                            <input type="submit" class="mybutton" value="訂購" onclick="postToGoogle();">
-
+                            <input type="submit" class="btn-block" value="訂購">
                         </form>
                     </div>
                 </div>
@@ -489,34 +467,6 @@ work only with <span>Rise</span>.<i class="fa fa-quote-right right fa-2x"></i></
         </div><!-- row -->
     
     </div><!-- container -->
-
-    <script type="text/javascript">
-           function postToGoogle() {
-               var field1 = document.getElementById("Purchaser").value;
-               var field2 = document.getElementById("Receiver").value;
-               var field3 = document.getElementById("Email").value;
-               console.log(field1)
-               console.log(field2)
-               console.log(field3)
-               $.ajax({
-                   url: "https://docs.google.com/forms/d/e/1FAIpQLScioIA59ZN71aZmmeMElf3u42nd82Di5K-YREifDJ3EVq2QFw/formResponse",
-                   data: {"entry.473890833": field1, "entry.1581381411": field2, "entry.1174023174": field3},
-                   type: "POST",
-                   //dataType: "xml",
-                   statusCode: {
-                       0: function() {
-                           console.log("successful")
-                           //Success message
-                       },
-                       200: function() {
-                           console.log("failed")
-                           //Success Message
-                       }
-                   }
-               });
-           }
-       </script>
-
     <!-- Google Map
 	=============================================
     <div id="map"></div> -->
@@ -546,6 +496,7 @@ work only with <span>Rise</span>.<i class="fa fa-quote-right right fa-2x"></i></
     <script src="plugins/inview/jquery.inview.min.js"></script>
     <script src="plugins/Lightbox/dist/js/lightbox.min.js"></script>
     <script src="plugins/WOW/dist/wow.min.js"></script>
+    <script src="js/scripts.js"></script>
     <!-- GOOGLE MAP -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9oQNAZIngiKtJCT-x9zPVOfgeRf8YCPU"></script>
 </body>
