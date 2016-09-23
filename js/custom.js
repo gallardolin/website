@@ -96,7 +96,7 @@ $(document).ready(function () {
         }
         var map = new google.maps.Map(mapCanvas, mapOptions);
 
-        var contentString = 'test info';
+        var contentString = '九兆軒食品坊';
         
         var infowindow = new google.maps.InfoWindow({
           content: contentString
