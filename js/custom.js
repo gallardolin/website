@@ -85,7 +85,7 @@ $(document).ready(function () {
         }
     });
     /***************** Google Map ******************/
-    google.maps.event.addDomListener(window, 'load', initialize);
+
     function initialize() {
         var coordinates = {lat: 25.127026, lng: 121.463461};
         var mapCanvas = document.getElementById('map');
@@ -113,7 +113,7 @@ $(document).ready(function () {
             infowindow.open(map, marker);
         });
     }
-
+    google.maps.event.addDomListener(window, 'load', initialize);
     /***************** Wow.js ******************/
     
     new WOW().init();
