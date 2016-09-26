@@ -4,10 +4,34 @@ jQuery(document).ready(function() {
         send form to google form
     */
     $('.submit-form').on('submit', function(e) {
-      postToGoogle();
-      window.location.replace("#owl-hero");
-      window.location.reload()
-      return false;
+      // postToGoogle();
+      // return false;
+          var field1 = document.getElementById("Purchaser").value;
+          var field2 = document.getElementById("Receiver").value;
+          var field3 = document.getElementById("Email").value;
+          msg = '姓名: ' + field1 + '\n' +
+                '地址: ' + field2 + '\n' + 
+                '電話: ' + field3 + '\n'
+          swal({
+               title: "訂單確認",
+               text: msg,
+               type: "warning",
+               showCancelButton: true,
+               confirmButtonClass: "btn-danger",
+               confirmButtonText: "確認",
+               cancelButtonText: "取消",
+               closeOnConfirm: false,
+               closeOnCancel: false
+           }, function(isConfirm) {
+               if (isConfirm) {
+                   postToGoogle();
+                   return true;
+               } else {
+                   swal("Cancelled", "", "error");
+                   return false;
+               }
+           });
+          return false;
     });
 
     function postToGoogle() {
@@ -25,12 +49,19 @@ jQuery(document).ready(function() {
                    statusCode: {
                        0: function() {
                            console.log("successful")
-                           alert('感 謝 您 的 訂 購!');
+                           success = field1 + '先生/小姐' + '\n'+ '感 謝 您 的 訂 購!'
+                                     + '訂購資訊:' + '\n' + field2 + field3
+                           //alert(success);
+                           swal("感 謝 您 的 訂 購!", "", "success")
+                           window.location.reload();
+                           //window.location.reload()
                            //Success message
                        },
                        200: function() {
                            console.log("failed")
-                           alert('訂 購 失 敗!');
+                           swal("訂 購 失 敗!", "", "error");
+                           window.location.replace("#contact");
+                           //alert('訂 購 失 敗!');
                            //Success Message
                        }
                    }
