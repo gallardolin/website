@@ -5,6 +5,8 @@ jQuery(document).ready(function() {
     */
     $('.submit-form').on('submit', function(e) {
       postToGoogle();
+      window.location.replace("#contact");
+      return false;
     });
 
     function postToGoogle() {
