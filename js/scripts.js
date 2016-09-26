@@ -5,7 +5,7 @@ jQuery(document).ready(function() {
     */
     $('.submit-form').on('submit', function(e) {
       postToGoogle();
-      window.location.replace("#contact");
+      window.location.replace("#owl-hero");
       return false;
     });
 
