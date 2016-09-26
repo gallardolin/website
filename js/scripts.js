@@ -21,14 +21,15 @@ jQuery(document).ready(function() {
                confirmButtonText: "確認",
                cancelButtonText: "取消",
                closeOnConfirm: false,
-               closeOnCancel: false
+               closeOnCancel: false,
+               showLoaderOnConfirm: true
            }, function(isConfirm) {
                if (isConfirm) {
-                   postToGoogle();
-                   return true;
+                  setTimeout(function () {
+                       postToGoogle();
+                   }, 2000);
                } else {
-                   swal("Cancelled", "", "error");
-                   return false;
+                  swal("Cancelled", "", "error");
                }
            });
           return false;
@@ -52,15 +53,27 @@ jQuery(document).ready(function() {
                            success = field1 + '先生/小姐' + '\n'+ '感 謝 您 的 訂 購!'
                                      + '訂購資訊:' + '\n' + field2 + field3
                            //alert(success);
-                           swal("感 謝 您 的 訂 購!", "", "success")
-                           window.location.reload();
+                          swal({
+                               title: "感 謝 您 的 訂 購!",
+                               text: "",
+                               type: "success",
+                               closeOnConfirm: false,
+                           }, function (){
+                               window.location.reload(true);
+                           });
                            //window.location.reload()
                            //Success message
                        },
                        200: function() {
                            console.log("failed")
-                           swal("訂 購 失 敗!", "", "error");
-                           window.location.replace("#contact");
+                           swal({
+                                title: "訂 購 失 敗!",
+                                text: "",
+                                type: "error",
+                                closeOnConfirm: false,
+                            }, function (){
+                                window.location.replace("#contact");
+                            });
                            //alert('訂 購 失 敗!');
                            //Success Message
                        }
