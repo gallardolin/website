@@ -6,6 +6,7 @@ jQuery(document).ready(function() {
     $('.submit-form').on('submit', function(e) {
       postToGoogle();
       window.location.replace("#owl-hero");
+      window.location.reload()
       return false;
     });
 
