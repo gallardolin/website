@@ -20,9 +20,24 @@ jQuery(document).ready(function() {
           var purchaser = document.getElementById("Purchaser").value;
           var address = document.getElementById("Receiver").value;
           var cellphone = document.getElementById("Cellphone").value;
+          var greencake10 = document.getElementById("Greencake10").value;
+          var greencake16 = document.getElementById("Greencake16").value;
+          var greencake12 = document.getElementById("Greencake12").value;
+          var goldvege = document.getElementById("Goldvege").value;
+          var soltpork = document.getElementById("Soltpork").value;
+          var spicysoup = document.getElementById("Spicysoup").value;
+          total = greencake10*220 + greencake16*330 + greencake12*160 +
+                  goldvege*135 + soltpork*165 + spicysoup*250
           msg = '姓名: ' + purchaser + '\n' +
                 '地址: ' + address + '\n' + 
-                '電話: ' + cellphone + '\n'
+                '電話: ' + cellphone + '\n' + 
+                '綠豆糕禮盒（10入裝）: ' + greencake10 + '盒\n' +
+                '綠豆糕禮盒（16入裝）: ' + greencake16 + '盒\n' +
+                '綠豆糕（12入裝）: ' + greencake12 + '盒\n' +
+                '黃金泡菜（500公克）: ' + goldvege + '罐\n' +
+                '客家鹹豬肉（300公克）: ' + soltpork + '條\n' +
+                '麻辣鍋底（300公克）: ' + spicysoup + '包\n' +
+                '總金額: ' + total + '元'
           swal({
                title: "訂單確認",
                text: msg,
@@ -75,7 +90,7 @@ jQuery(document).ready(function() {
       var phone = document.getElementById("QPhone").value;
       console.log(phone)
       // Replace the data source URL on next line with your data source URL.
-      var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1A7WscqcMlUc1BeKjGr1BLMDxdSmEYCsFaUVH51UlKpA/edit?usp=sharing', opts);
+      var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1udfsd1HvGipZ_Qb2ImWzaY55QUQBsAGDSmGP06IsVT4/edit?usp=sharing', opts);
 
       // Optional request to return only column C and the sum of column B, grouped by C members.
       query.setQuery("select * where B = '"+ phone+"'");
@@ -127,6 +142,8 @@ jQuery(document).ready(function() {
                var goldvege = document.getElementById("Goldvege").value;
                var soltpork = document.getElementById("Soltpork").value;
                var spicysoup = document.getElementById("Spicysoup").value;
+               total = greencake10*220 + greencake16*330 + greencake12*160 +
+                  goldvege*135 + soltpork*165 + spicysoup*250
                if (spicysoup == null)
                   spicysoup = 0
                // console.log(field1)
@@ -144,6 +161,7 @@ jQuery(document).ready(function() {
                     "entry.1470562695": goldvege,
                     "entry.1735211531": soltpork,
                     "entry.387391597": spicysoup,
+                    "entry.1716117777": total,
                   },
                    type: "POST",
                    //dataType: "xml",
