@@ -452,6 +452,10 @@ work only with <span>Rise</span>.<i class="fa fa-quote-right right fa-2x"></i></
                     <h2>立 即 訂 購</h2>
                     <hr class="sep">
                     <h3>Order right now</h3>
+                    <div class="btn-group btn-group-justified">
+                        <a class="btn btn-primary btn-lg" id="request">新增訂單</a>
+                        <a class="btn btn-info btn-lg" id="review">查詢訂單</a>
+                    </div>
                         <form role="form" action="/website/" method="post" class="submit-form" >
                             <p> 姓 名 </p>
                             <div class="form-group">
@@ -463,9 +467,44 @@ work only with <span>Rise</span>.<i class="fa fa-quote-right right fa-2x"></i></
                             </div>
                             <p> 聯 絡 電 話 </p>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="Email" placeholder="" name="Email" value="" required dir="auto">
+                                <input type="text" class="form-control" id="Cellphone" placeholder="" name="Cellphone" value="" required dir="auto">
                             </div>
+                            <p> 訂 單 資 訊 </p>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="img/portfolio/prduct1.jpg" class="img-responsive" alt="1">
+                                    <p> 綠 豆 糕 禮 盒（10入裝）</p> 
+                                    <input type="number" id="Greencake10" placeholder="" name="greencake10" value="0" required dir="auto" min="0" size="10px">
+                                    <img src="img/portfolio/prduct1.jpg" class="img-responsive" alt="1">
+                                    <p> 綠 豆 糕 禮 盒（16入裝）</p>
+                                    <input type="number" id="Greencake16" placeholder="" name="greencake16" value="0" required dir="auto" min="0" size="10px">
+                                    <img src="img/portfolio/prduct1.jpg" class="img-responsive" alt="1">
+                                    <p> 綠 豆 糕（12入裝）</p>
+                                    <input type="number" id="Greencake12" placeholder="" name="greencake12" value="0" required dir="auto" min="0" maxlength="3" size="10px" >
+                                </div>
+                                <div class="col-lg-6">
+                                    <img src="img/portfolio/prduct1.jpg" class="img-responsive" alt="1">
+                                    <p> 黃 金 泡 菜（500公克）</p>
+                                    <input type="number" id="Goldvege" placeholder="" name="goldvege" value="0" required dir="auto" min="0" size="10px">
+                                    <img src="img/portfolio/prduct1.jpg" class="img-responsive" alt="1">
+                                    <p> 客 家 鹹 豬 肉（300公克）</p>
+                                    <input type="number" id="Soltpork" placeholder="" name="soltpork" value="0" required dir="auto" min="0" size="10px">
+                                    <img src="img/portfolio/prduct1.jpg" class="img-responsive" alt="1">
+                                    <p> 麻 辣 鍋 底（300公克）</p>
+                                    <input type="number" id="Spicysoup" placeholder="" name="spicysoup" value="0" required dir="auto" min="0" size="10px">
+                                </div>
+                            </div>
+                            <br>
                             <input type="submit" class="btn-block" value="訂購">
+                        </form>
+                        <form role="form" action="" method="post" class="query-form" style="display:none">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="QPurchaser" placeholder="Purchaser" name="Purchaser" value="" required dir="auto">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="QPhone" placeholder="Phone" name="Phone" value="" required dir="auto" pattern='[0-9]+'>
+                            </div>
+                            <input type="submit" class="btn-block" value="Send">
                         </form>
                     </div>
                 </div>
@@ -507,6 +546,8 @@ work only with <span>Rise</span>.<i class="fa fa-quote-right right fa-2x"></i></
     <script src="plugins/sweetAlert/dist/sweetalert.min.js"></script>
     <!-- GOOGLE MAP -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9oQNAZIngiKtJCT-x9zPVOfgeRf8YCPU"></script>
+    <!-- GOOGLE QUERY -->
+    <script src="https://www.google.com/jsapi" async></script>
 </body>
 
 </html>
